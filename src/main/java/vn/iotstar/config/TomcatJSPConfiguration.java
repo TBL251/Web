@@ -27,6 +27,7 @@ public class TomcatJSPConfiguration {
             @Value("${spring.mvc.view.prefix:/WEB-INF/views/}") String prefix,
             @Value("${spring.mvc.view.suffix:.jsp}") String suffix) {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver(prefix, suffix);
+        resolver.setContentType("text/html; charset=UTF-8");
         resolver.setAlwaysInclude(true);
         return resolver;
     }
